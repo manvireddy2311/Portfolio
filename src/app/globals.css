@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-border: #e2e8f0;
+  --accent: #2563eb;
+  --accent-muted: #3b82f6;
+  --accent-light: #eff6ff;
+  --text-muted: #64748b;
+  --nav-bg: rgba(248, 250, 252, 0.8);
+}
+
+.dark {
+  --background: #030712; /* Rich dark navy */
+  --foreground: #f3f4f6;
+  --card: #0b1329; /* Card background */
+  --card-border: #1e293b;
+  --accent: #3b82f6;
+  --accent-muted: #60a5fa;
+  --accent-light: #1e293b;
+  --text-muted: #9ca3af;
+  --nav-bg: rgba(3, 7, 18, 0.8);
+}
+
+@theme {
+  --color-bg-custom: var(--background);
+  --color-text-custom: var(--foreground);
+  --color-card-custom: var(--card);
+  --color-card-border-custom: var(--card-border);
+  --color-accent-custom: var(--accent);
+  --color-accent-muted-custom: var(--accent-muted);
+  --color-accent-light-custom: var(--accent-light);
+  --color-text-muted-custom: var(--text-muted);
+  --color-nav-bg-custom: var(--nav-bg);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Utilities */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dark .glassmorphism {
+  background: rgba(11, 19, 41, 0.45);
+}
